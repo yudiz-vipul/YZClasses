@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.dependency 'PhoneNumberKit'
   s.dependency 'NVActivityIndicatorView'
   s.dependency 'Kingfisher'
+  s.dependency 'UITextView+Placeholder'
 end
