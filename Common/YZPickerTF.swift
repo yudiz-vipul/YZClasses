@@ -111,7 +111,7 @@ extension YZPickerTF {
     ///   - tintColor: `UIColor` tyepe object to set tint color of accessory `UIBarButtonItem`
     ///   - rect: `CGRect` type object to set frame of accessory `UIBarButtonItem`.
     public func addPickerInputAccessory(_ text: String, textFont: UIFont, tintColor: UIColor? = nil, rect: CGRect = .zero) {
-        let barButtonItem: UIBarButtonItem = UIBarButtonItem(title: text, style: .done, target: self, action: #selector(onBarButtonItemTap(_:)))
+        let barButtonItem: UIBarButtonItem = UIBarButtonItem(title: text, style: .done, target: self, action: #selector(onPickerBarButtonItemTap(_:)))
         barButtonItem.tintColor = tintColor
         let doneToolbar: UIToolbar = UIToolbar(frame: rect)
         doneToolbar.barStyle = .default
@@ -120,7 +120,7 @@ extension YZPickerTF {
         inputAccessoryView = doneToolbar
     }
     
-    @objc fileprivate func onBarButtonItemTap(_ sender: UIBarButtonItem) {
+    @objc fileprivate func onPickerBarButtonItemTap(_ sender: UIBarButtonItem) {
         _ = resignFirstResponder()
         if let _ = viewPicker {
             if arrOfPickerItems.isEmpty == false {
