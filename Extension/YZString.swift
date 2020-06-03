@@ -450,8 +450,8 @@ extension NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: defaultTabInterval, options: [NSTextTab.OptionKey: Any]())]
         paragraphStyle.defaultTabInterval = defaultTabInterval
-        paragraphStyle.firstLineHeadIndent = paragraphSpacing
-        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.firstLineHeadIndent = firstLineHeadIndent
+        paragraphStyle.lineSpacing = stringList.count > 1 ? lineSpacing : .leastNonzeroMagnitude
         paragraphStyle.paragraphSpacing = paragraphSpacing
         paragraphStyle.headIndent = headIndent
 
@@ -459,8 +459,11 @@ extension NSAttributedString {
         let bulletAttributes: [NSAttributedString.Key: Any] = [.font: textFont, .foregroundColor: specialCharacterColor]
         let bulletList = NSMutableAttributedString()
         
-        for string in stringList {
-            let formattedString = "\(specialCharacter)\t\(string)\n"
+        for (index, string) in stringList.enumerated() {
+            var formattedString = "\(specialCharacter)\t\(string)\n"
+            if index == stringList.count - 1 {
+                formattedString = "\(specialCharacter)\t\(string)"
+            }
             let attributedString = NSMutableAttributedString(string: formattedString)
 
             attributedString.addAttributes(
@@ -476,7 +479,6 @@ extension NSAttributedString {
             attributedString.addAttributes(bulletAttributes, range: rangeForBullet)
             bulletList.append(attributedString)
         }
-
         return bulletList
     }
 }

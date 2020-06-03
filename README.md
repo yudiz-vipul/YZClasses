@@ -349,7 +349,7 @@ YZClasses is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'YZClasses', '~> 0.1.5'
+pod 'YZClasses', '~> 0.1.6'
 ```
 
 

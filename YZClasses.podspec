@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = 'YZClasses'
-  s.version                 = '0.1.5'
+  s.version                 = '0.1.6'
   s.summary                 = 'YZClasses is design and developed for Yudiz Solutions Pvt. Ltd.'
   s.description             = <<-DESC
   "YZClasses is useful for Junior iOS developer and trainee, so it easy can be easy to develop application and reduce code lines."
