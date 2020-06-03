@@ -431,7 +431,6 @@ extension NSAttributedString {
     ///   - lineSpacing: The distance in points between the bottom of one line fragment and the top of the next.
     ///   - paragraphSpacing: The space after the end of the paragraph.
     ///   - headIndent: The indentation of the receiver’s lines other than the first.
-    ///   - tailIndent: The trailing indentation of the receiver.
     ///   - specialCharacterColor: `UIColor` object to set color for given special character.
     ///   - textFont: `UIFont` object to set font for given string.
     ///   - foregroundColor: `UIColor` object to set color for given string.
@@ -443,19 +442,18 @@ extension NSAttributedString {
                  lineSpacing: CGFloat = 0.5,
                  paragraphSpacing: CGFloat = 2,
                  headIndent: CGFloat = 15,
-                 tailIndent: CGFloat = 15,
                  specialCharacterColor: UIColor,
                  textFont: UIFont,
                  foregroundColor: UIColor) -> NSAttributedString {
 
+
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: defaultTabInterval, options: [:])]
+        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: defaultTabInterval, options: [NSTextTab.OptionKey: Any]())]
         paragraphStyle.defaultTabInterval = defaultTabInterval
-        paragraphStyle.firstLineHeadIndent = firstLineHeadIndent
+        paragraphStyle.firstLineHeadIndent = paragraphSpacing
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.paragraphSpacing = paragraphSpacing
         paragraphStyle.headIndent = headIndent
-        paragraphStyle.tailIndent = tailIndent
 
         let textAttributes: [NSAttributedString.Key: Any] = [.font: textFont, .foregroundColor: foregroundColor]
         let bulletAttributes: [NSAttributedString.Key: Any] = [.font: textFont, .foregroundColor: specialCharacterColor]

@@ -18,8 +18,24 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="not-mT-MSq">
+                                <rect key="frame" x="100" y="100" width="175" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="not-mT-MSq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="EEt-96-YUc"/>
+                            <constraint firstAttribute="trailing" secondItem="not-mT-MSq" secondAttribute="trailing" constant="100" id="Fwi-J6-Cr2"/>
+                            <constraint firstItem="not-mT-MSq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="100" id="NzQ-Wo-2mR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblTest" destination="not-mT-MSq" id="cyk-w3-DP8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
